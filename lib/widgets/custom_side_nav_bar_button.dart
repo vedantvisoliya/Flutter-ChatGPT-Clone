@@ -5,11 +5,13 @@ class CustomSideNavBarButton extends StatefulWidget {
   final String iconPath1;
   final String iconPath2;
   final bool isCollapsed;
+  final Color? iconColor;
   const CustomSideNavBarButton({
     super.key,
     required this.iconPath1,
     required this.iconPath2,
     required this.isCollapsed,
+    this.iconColor,
   });
 
   @override
@@ -42,7 +44,7 @@ class _CustomSideNavBarButtonState extends State<CustomSideNavBarButton> {
           (isHovered && (widget.isCollapsed == true)) ? widget.iconPath2:widget.iconPath1,
           width: 30,
           height: 30,
-          color: AppColors.iconColor,
+          color: widget.iconColor ?? AppColors.iconColor,
         ),
       ),
     );

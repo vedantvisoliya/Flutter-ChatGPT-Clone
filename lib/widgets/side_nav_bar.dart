@@ -11,7 +11,7 @@ class SideNavBar extends StatefulWidget {
 }
 
 class _SideNavBarState extends State<SideNavBar> {
-  bool isCollapsed = true;
+  bool isCollapsed = false;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -45,6 +45,7 @@ class _SideNavBarState extends State<SideNavBar> {
                         iconPath1: "assets/chatgpt-logo.png", 
                         iconPath2: "assets/sidebar.png",
                         isCollapsed: isCollapsed,
+                        iconColor: Colors.white,
                       ),
                     ),
 
@@ -83,17 +84,41 @@ class _SideNavBarState extends State<SideNavBar> {
                   icon: Icons.collections_bookmark_outlined,
                   text: "Library",
                 ),
-                
+
+                const SizedBox(height: 20,),
+
+                isCollapsed ? 
+                const SizedBox():
                 SideNavBarButton(
                   isCollapsed: isCollapsed,
                   icon: Icons.play_circle_outline,
                   text: "Sora",
                 ),
                 
+                isCollapsed ? 
+                const SizedBox():
                 SideNavBarButton(
                   isCollapsed: isCollapsed,
                   icon: Icons.grid_view,
                   text: "GPTs",
+                ),
+                
+                isCollapsed ?
+                const SizedBox():
+                Container(
+                  margin: const EdgeInsets.only(top: 5, bottom: 5, left: 10, right: 5),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                      "Chats",
+                      style: TextStyle(
+                        color: AppColors.iconColor,
+                        fontSize: 16,
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ],
             ),
