@@ -33,9 +33,9 @@ class _SideNavBarButtonState extends State<SideNavBarButton> {
       },
       child: Container(
         padding: const EdgeInsets.all(10.0),
-        margin: const EdgeInsets.all(5.0),
+        margin: const EdgeInsets.only(top: 5, bottom: 5, left: 10, right: 5),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20.0),
+          borderRadius: BorderRadius.circular(16.0),
           color: isHovered ? AppColors.proSideNavBarButton : null,
         ),
         child: Row(

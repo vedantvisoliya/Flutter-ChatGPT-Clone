@@ -42,10 +42,9 @@ class _SideNavBarState extends State<SideNavBar> {
                         });
                       },
                       child: CustomSideNavBarButton(
-                        iconPath1: "assets/chatgpt.png", 
+                        iconPath1: "assets/chatgpt-logo.png", 
                         iconPath2: "assets/sidebar.png",
                         isCollapsed: isCollapsed,
-                        iconColor2: AppColors.iconColor,
                       ),
                     ),
 
@@ -60,8 +59,6 @@ class _SideNavBarState extends State<SideNavBar> {
                         iconPath1: "assets/sidebar.png", 
                         iconPath2: "assets/sidebar.png",
                         isCollapsed: isCollapsed,
-                        iconColor1: AppColors.iconColor,
-                        iconColor2: AppColors.iconColor,
                       ),
                     ),
                   ],
