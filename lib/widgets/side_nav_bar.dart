@@ -4,7 +4,8 @@ import 'package:chatgpt_ai_clone/widgets/side_nav_bar_button.dart';
 import 'package:flutter/material.dart';
 
 class SideNavBar extends StatefulWidget {
-  const SideNavBar({super.key});
+  const SideNavBar({
+    super.key});
 
   @override
   State<SideNavBar> createState() => _SideNavBarState();
