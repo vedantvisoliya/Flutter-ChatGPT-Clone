@@ -1,3 +1,5 @@
+import 'package:chatgpt_ai_clone/pages/chat_page.dart';
+import 'package:chatgpt_ai_clone/services/chat_web_service.dart';
 import 'package:chatgpt_ai_clone/themes/colors.dart';
 import 'package:chatgpt_ai_clone/widgets/search_bar_button.dart';
 import 'package:chatgpt_ai_clone/widgets/search_bar_button_with_text.dart';
@@ -12,6 +14,8 @@ class SearchSection extends StatefulWidget {
 }
 
 class _SearchSectionState extends State<SearchSection> {
+  final TextEditingController _queryController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -36,6 +40,7 @@ class _SearchSectionState extends State<SearchSection> {
             child: Column(
               children: [
                 TextField(
+                  controller: _queryController,
                   cursorColor: Colors.white,
                   cursorWidth: 1.0,
                   keyboardType: TextInputType.text,
@@ -74,7 +79,21 @@ class _SearchSectionState extends State<SearchSection> {
                         const SizedBox(width: 10.0,),
 
                         // send button
-                        SendButton()
+                        GestureDetector(
+                          onTap: () {
+                            if (_queryController.text.isNotEmpty){
+                              ChatWebService().chat(_queryController.text.trim());
+                              Navigator.push(
+                                context, 
+                                MaterialPageRoute(
+                                  builder: (context) => ChatPage(query: _queryController.text)
+                                ),
+                              );
+                            }
+
+                          },
+                          child: SendButton()
+                        )
                       ],
                     ),
                   ],
