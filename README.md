@@ -50,6 +50,7 @@ This is a full-stack AI chatbot application that mimics the core functionality o
 #### 📌 Backend (Python + FastAPI)
 1. Clone the repo and navigate:
     ```
+    git clone https://github.com/vedantvisoliya/Flutter-ChatGPT-Clone.git
     cd chatgpt_ai_clone
     ```
 2. Change directory to server folder and activate virtual environment:
