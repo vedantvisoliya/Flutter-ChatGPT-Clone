@@ -27,6 +27,7 @@ If the context above is empty or the context is not enough to answer the query, 
 I am ready to read your response for the above query.
 """
         
-        response = self.model.generate_content(full_prompt)
+        response = self.model.generate_content(full_prompt, stream=True)
 
-        return response.text
+        for chunk in response:
+            yield chunk.text
