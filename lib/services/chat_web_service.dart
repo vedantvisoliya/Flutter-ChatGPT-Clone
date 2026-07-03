@@ -20,7 +20,7 @@ class ChatWebService {
   Stream<Map<String, dynamic>> get contentStream => _contentController.stream;
 
   void connect() {
-    _socket = WebSocket(Uri.parse("ws://localhost:8000/ws/chat"));
+    _socket = WebSocket(Uri.parse("wss://flutter-chatgpt-clone-backend.onrender.com/ws/chat"));
 
     _socket!.messages.listen((message) {
       // ignore: unused_local_variable
